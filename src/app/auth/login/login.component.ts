@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
  ) { } 
   
   ngOnInit(): void {
+    sessionStorage.removeItem('login');
     this.formInit();
    
   }
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
      }, 2000);
     }
     else{
+      sessionStorage.setItem('login', 'true');
       setTimeout(() => {
       this.router.navigate(["/pages/dashboard"])
     },2000);
